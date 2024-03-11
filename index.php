@@ -16,7 +16,7 @@ require_once (__DIR__ . DIRECTORY_SEPARATOR . "header.php");
 
 
 <?php  // FOOTER 
-require_once (__DIR__ . DIRECTORY_SEPARATOR ."footer.php");
+require_once (__DIR__ . DIRECTORY_SEPARATOR ."/footer.php");
 ?>
 
 
