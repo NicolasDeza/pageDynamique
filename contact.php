@@ -4,7 +4,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
     
     // Creation tableau pour messages d'erreurs
     $erreurs = [];
-
+    // Recuperation des données du formulaire
     $nom = htmlentities($_POST["nom"]);
     $prenom = htmlentities($_POST["prenom"]);
     $email = htmlentities($_POST["email"]);
@@ -39,7 +39,10 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
     foreach ($erreurs as $erreur) {
         echo "<p>$erreur</p>";
     }
+  } else {
+    echo " Formulaire correct";
   }
+
 }
 
 // Valeur spécifique de la page
