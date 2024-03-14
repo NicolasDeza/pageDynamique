@@ -2,9 +2,9 @@
  // Traitement du formulaire
 if($_SERVER["REQUEST_METHOD"] === "POST") {
     
-    // Creation tableau pour messages d'erreurs
+    // Creation tableau pour les messages d'erreurs
     $erreurs = [];
-    // Recuperation des données du formulaire
+    // Récuperation des données du formulaire
     $nom = htmlentities($_POST["nom"]);
     $prenom = htmlentities($_POST["prenom"]);
     $email = htmlentities($_POST["email"]);
