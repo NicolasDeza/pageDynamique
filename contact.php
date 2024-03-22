@@ -34,7 +34,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
             $erreurs = "Le message ne peut contenir qu'entre 10 et 3000 caractères";
         }
     }
-    // Condition pour afficher ou pas les erreurs
+    // Condition pour afficher les erreurs si il y en a
     if(!empty($erreurs)) {
     foreach ($erreurs as $erreur) {
         echo "<p>$erreur</p>";
@@ -50,6 +50,27 @@ $titrePage ="Contact";
 $metaDescription ="Description page contact"; 
 
 ?>
+
+<?php
+
+
+// Traitement email
+$sujet = "Sujet du courriel";
+$expediteur = $_POST["email"];
+$destinataire = "destinataire@exemple.com";
+$message = $_POST["message"];
+
+// Tentative d'envoi du mail 
+if (mail($sujet,$expediteur,$destinataire, $message))
+{
+    echo "Le courriel a été envoyé avec succès.";
+}
+else
+{
+    echo "L'envoi du courriel a échoué.";
+}
+?>
+
 
 
 <?php // Ajout du header
@@ -77,4 +98,7 @@ require_once (__DIR__ . DIRECTORY_SEPARATOR . "header.php")
 
 <?php
 require_once (__DIR__ . DIRECTORY_SEPARATOR ."footer.php");
+
+
+
 ?>
