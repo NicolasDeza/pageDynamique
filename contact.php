@@ -1,4 +1,9 @@
 <?php
+// Valeur spécifique de la page
+$titrePage ="Contact";
+$metaDescription ="Description page contact"; 
+
+
  // Traitement du formulaire
 if($_SERVER["REQUEST_METHOD"] === "POST") {
     
@@ -45,31 +50,10 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
 
 }
 
-// Valeur spécifique de la page
-$titrePage ="Contact";
-$metaDescription ="Description page contact"; 
 
 ?>
 
-<?php
 
-
-// Traitement email
-$sujet = "Sujet du courriel";
-$expediteur = $_POST["email"];
-$destinataire = "destinataire@exemple.com";
-$message = $_POST["message"];
-
-// Tentative d'envoi du mail 
-if (mail($sujet,$expediteur,$destinataire, $message))
-{
-    echo "Le courriel a été envoyé avec succès.";
-}
-else
-{
-    echo "L'envoi du courriel a échoué.";
-}
-?>
 
 
 

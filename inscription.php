@@ -1,3 +1,11 @@
+<?php 
+$titrePage = "Inscription";
+$metaDescription ="Description page inscription "; 
+?>
+
+<?php  // HEADER
+ require_once (__DIR__ . DIRECTORY_SEPARATOR . "header.php")
+?>
 <h1>Inscription</h1>
 
 
@@ -24,3 +32,7 @@
         <br><br>
     <button type="submit">Envoyer</button>
 </form>
+
+<?php  // FOOTER 
+require_once (__DIR__ . DIRECTORY_SEPARATOR ."footer.php");
+?>

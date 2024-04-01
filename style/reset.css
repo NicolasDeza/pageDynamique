@@ -86,22 +86,3 @@ video {
   font: inherit;
   vertical-align: baseline;
 }
-header {
-  background-color: red;
-  height: 50px;
-}
-footer {
-  background-color: beige;
-  height: 50px;
-}
-nav ul li {
-  display: inline-block;
-}
-main {
-  width: 50em;
-  min-height: calc(100vh - 100px);
-}
-h1 {
-  font-size: 2em;
-  font-weight: bold;
-}
