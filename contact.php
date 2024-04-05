@@ -50,10 +50,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
 
 }
 
-
 ?>
-
-
 
 
 
@@ -79,6 +76,7 @@ require_once (__DIR__ . DIRECTORY_SEPARATOR . "header.php")
     <br><br>
     <button type="submit">Envoyer</button>
 </form>
+
 
 <?php
 require_once (__DIR__ . DIRECTORY_SEPARATOR ."footer.php");

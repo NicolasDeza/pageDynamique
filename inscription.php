@@ -6,6 +6,41 @@ $metaDescription ="Description page inscription ";
 <?php  // HEADER
  require_once (__DIR__ . DIRECTORY_SEPARATOR . "header.php")
 ?>
+
+
+<?php
+       //Traitement formulaire et Connexion DB
+
+// Vérifie si le formulaire a été soumis en méthode post
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Configuration pour se connecter à la base de donnée
+    $nomDuServeur = "localhost";
+    $nomUtilisateur = "root";
+    $nomBaseDeDonnees = "projet_php";
+
+    try {
+        // Connexion à la base de données
+        $pdo = new PDO("mysql:host=$nomDuServeur;dbname=$nomBaseDeDonnees", $nomUtilisateur);
+        
+        $requete = $pdo->prepare("INSERT INTO t_utilisateur_uti (uti_pseudo, uti_email, uti_motdepasse)
+                                  VALUES (:pseudo, :email, :mot_de_passe)");
+
+
+        $requete->bindParam(':pseudo', $_POST['pseudo_inscription']);
+        $requete->bindParam(':email', $_POST['inscription_email']);
+        $requete->bindParam(':mot_de_passe', $_POST['inscription_mdp']);
+        
+        
+        $requete->execute();
+        
+        echo "Utilisateur ajouté avec succès !";
+    } catch (PDOException $e) {
+        echo "Erreur d'exécution de requête : " . $e->getMessage();
+    }
+}
+?>
+
+
 <h1>Inscription</h1>
 
 
@@ -21,7 +56,7 @@ $metaDescription ="Description page inscription ";
 
     <br><br>
 
-    <label for="inscription_mdp">Mot de pass :</label>
+    <label for="inscription_mdp">Mot de passe :</label>
         <input type="password" id="inscription_mdp" name="inscription_mdp" minlength="2" maxlength="72" required>
 
     <br><br>
