@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && !empty($_POST)) {
     $mdp = htmlentities($_POST["inscription_mdp"]);
     $confirmationMdp = htmlentities($_POST["inscription_confirmation_mdp"]);
 
-    // TEST
+    // TEST A SUPPRIMER POUR LA BONNE VERSION
     echo "<p>" . $pseudo . " " . $email . " " . $mdp . " " . $confirmationMdp . "</p>";
     // TEST
     
@@ -23,9 +23,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && !empty($_POST)) {
     }
 
     // Traitement de l'email
+    if (isset($email) && empty($email)) {
+        $erreurs[] = "Le champ email est vide.";
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $erreurs[] = "L'adresse email n'est pas valide.";
+    }
 
 
-    
+
 
     // Afficher les messages d'erreurs 
     if (!empty($erreurs)) {

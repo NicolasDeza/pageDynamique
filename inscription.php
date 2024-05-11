@@ -8,7 +8,7 @@ $metaDescription ="Description page inscription ";
 ?>
 
 <?php 
- require_once ("traitementForm" . DIRECTORY_SEPARATOR ."traitementInscription.php")
+ require_once (__DIR__ . DIRECTORY_SEPARATOR . "traitementForm" . DIRECTORY_SEPARATOR ."traitementInscription.php")
 ?>
  
 <?php 
