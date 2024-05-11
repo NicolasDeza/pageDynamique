@@ -3,6 +3,8 @@
 $titrePage ="Contact";
 $metaDescription ="Description page contact"; 
 
+// Importer le traitement du formulaire
+require_once ("/traitementFormulaire.php");
 
  // Traitement du formulaire
 if($_SERVER["REQUEST_METHOD"] === "POST") {
@@ -16,7 +18,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
     $message = htmlentities($_POST["message"]);
 
      // Nom
-    if(isset($_POST["nom"]) && !empty($_POST["nom"]))
+    if(!isset($_POST["nom"]) && !empty($_POST["nom"]))
     {
         if(strlen($nom) < 10 || strlen($nom) > 255) {
             $erreurs = "Le nom ne peut contenir qu'entre 2 et 255 caractères";
@@ -49,10 +51,7 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
   }
 
 }
-
 ?>
-
-
 
 <?php // Ajout du header
 require_once (__DIR__ . DIRECTORY_SEPARATOR . "header.php") 
@@ -61,7 +60,7 @@ require_once (__DIR__ . DIRECTORY_SEPARATOR . "header.php")
 
 <h1>Contact</h1>
 
-<form method="post" action="" >
+<form method="post" action="/contact.php" >
     <label for="nom">Nom :</label>
         <input type="text" id="nom" name="nom" minlength="2" maxlength="255"  required>
     <br><br>

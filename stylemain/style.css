@@ -3,8 +3,9 @@ html {
 }
 
 header {
-  background-color: red;
+  background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 50px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -27,9 +28,14 @@ nav ul li a:focus,
 nav ul li a:hover {
   font-weight: bold;
 }
+h1 a {
+  text-decoration: none;
+  color: black;
+}
 main {
   width: 50em;
   padding: 1em;
+  height: calc(100vh - 160px);
 }
 h1 {
   font-size: 2em;

@@ -7,12 +7,12 @@ $metaDescription ="Description page inscription ";
  require_once (__DIR__ . DIRECTORY_SEPARATOR . "header.php")
 ?>
 
-
-<?php
-       //Traitement formulaire et Connexion DB
-
-// Vérifie si le formulaire a été soumis en méthode post
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+<?php 
+ require_once ("traitementForm" . DIRECTORY_SEPARATOR ."traitementInscription.php")
+?>
+ 
+<?php 
+   
     // Configuration pour se connecter à la base de donnée
     $nomDuServeur = "localhost";
     $nomUtilisateur = "root";
@@ -37,17 +37,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } catch (PDOException $e) {
         echo "Erreur d'exécution de requête : " . $e->getMessage();
     }
-}
 ?>
 
 
 <h1>Inscription</h1>
 
 
-<form method="post" action="" >
+<form method="POST" action="inscription.php" >
 
     <label for="inscription_pseudo">Pseudo:</label>
-        <input type="text" id="inscripton_pseudo" name="pseudo_inscription" minlength="2" maxlength="255"  required>
+        <input type="text" id="inscripton_pseudo" name="inscription_pseudo" minlength="2" maxlength="255" required>
 
     <br><br>
 
