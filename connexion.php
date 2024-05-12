@@ -9,6 +9,9 @@ $metaDescription ="Description page connexion";
 ?>
 
 
+<?php  // Importer traitement du formulaire
+require_once(__DIR__ . DIRECTORY_SEPARATOR . "traitementForm" . DIRECTORY_SEPARATOR . "traitementConnexion.php");
+?>
 
 <h1>Connexion</h1>
 
