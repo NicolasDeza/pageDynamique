@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && !empty($_POST)) {
     // Traitement du mot de passe
     if (isset($mdp) && empty($mdp)) {
         $erreurs[] = "Le champ mot de passe est invalide";
-    } elseif (strlen($mdp) < 6) {
+    } elseif (strlen($mdp) < 2) {
         $erreurs[] = "Le mot de passe n'est pas assez long";
     } elseif (strlen($mdp) > 255) {
         $erreurs[] = "Le mot de passe est trop long";
