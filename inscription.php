@@ -18,6 +18,7 @@ $metaDescription ="Description page inscription ";
     $nomUtilisateur = "root";
     $nomBaseDeDonnees = "projet_php";
 
+    /*
     try {
         // Connexion à la base de données
         $pdo = new PDO("mysql:host=$nomDuServeur;dbname=$nomBaseDeDonnees", $nomUtilisateur);
@@ -37,6 +38,7 @@ $metaDescription ="Description page inscription ";
     } catch (PDOException $e) {
         echo "Erreur d'exécution de requête : " . $e->getMessage();
     }
+    */
 ?>
 
 
