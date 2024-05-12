@@ -6,7 +6,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST" && !empty($_POST)) {
      
     // Création du tableau d'erreurs
     $erreurs = [];
-
+     
+    // Recuperation des champs du formulaire
     $pseudo = htmlentities($_POST["inscription_pseudo"]);
     $email = htmlentities($_POST["inscription_email"]);
     $mdp = htmlentities($_POST["inscription_mdp"]);
