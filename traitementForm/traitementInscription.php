@@ -1,6 +1,7 @@
 <?php 
 // TRAITEMENT INSCRIPTION
 
+// Verification si la methode d'envoi est bien " POST "
 if ($_SERVER["REQUEST_METHOD"] === "POST" && !empty($_POST)) {
      
     // Création du tableau d'erreurs
